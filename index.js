@@ -28,7 +28,7 @@ async function run() {
     const projects = database.collection("projects");
     app.get("/projects",async(req,res)=>{
         const result=await projects.find().toArray()
-        res.status(200).send(result)
+        res.send(result)
     })
     app.get('/projects/:id',async(req,res)=>{
         const id= req.params.id
